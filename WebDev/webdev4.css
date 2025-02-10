@@ -1,0 +1,103 @@
+body {
+    width: 110vw;
+    height: 110vh;
+    padding: 0;
+    margin: -5vh auto auto -5vw;
+    position: relative;
+    overflow: hidden;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkMWEzYiIvPjxzdG9wIG9mZnNldD0iMzMuMzMzMzMlIiBzdG9wLWNvbG9yPSIjZjc5NDFkIi8+PHN0b3Agb2Zmc2V0PSI2Ni42NjY2NyUiIHN0b3AtY29sb3I9IiMwMGE1OTkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwN2FhYzYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=");
+    background-size: 100%;
+    background-image: linear-gradient(to right, hsl(335.5, 85.4%, 51.6%), hsl(305.8, 93.2%, 64.1%), hsl(55.5, 100%, 47.5%), hsl(173.7, 93.2%, 40.2%));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='hsl(335.5,85.4%,51.6%)', endColorstr='hsl(173.7,93.2%,40.2%)', GradientType=1);
+    mix-blend-mode: multiply, hard-light;
+  }
+  
+  div {
+    width: 4em;
+    height: 4em;
+    margin-left: 1em;
+    margin-top: -1em;
+    float: left;
+    mix-blend-mode: xor;
+  }
+  
+  div:nth-child(odd) {
+    border-top: 1px hsla(18, 50%, 30%, 1) solid;
+    border-left: 1px hsla(130, 70%, 30%, 1) solid;
+    border-right: 1px hsla(335, 50%, 40%, 1) solid;
+    border-bottom: 1px hsla(175, 50%, 30%, 1) solid;
+    background: hsla(189.6, 60.4%, 34.5%, 0.8);
+    animation: rotate 0.75s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+      filter: brightness(1.5) contrast(3);
+      mix-blend-mode: multiply;
+    }
+    100% {
+      transform: rotate(90deg);
+      filter: brightness(1) contrast(1);
+      mix-blend-mode: normal;
+    }
+  }
+  
+  #wall {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+    grid-gap: 0;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 3.5em;
+    line-height: 3.4rem;
+    letter-spacing: -1rem;
+    font-family: "Charmonman", cursive;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0);
+    mix-blend-mode: hard-light;
+  }
+  
+  span {
+    opacity: 0;
+    text-align: center;
+    color: hsl(var(--hue), 100%, 90%);
+  }
+  
+  .oddWord {
+    animation: torn 1.75s linear alternate 20 forwards;
+  }
+  
+  .evenWord {
+    animation: turn 0.75s linear 10 backwards;
+  }
+  
+  @keyframes turn {
+    0% {
+      transform: rotate(0deg);
+      filter: brightness(1) contrast(1); 
+      color: rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      transform: rotate(360deg);
+      filter: brightness(1.5) contrast(2);
+      color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  @keyframes torn {
+    to {
+      color: tomato;
+      font-weight: 700;
+    }
+  }
+  
+
