@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    margin: 0;
+}
+
+.image-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Basketball Score Overlay */
+.score-overlay.basketball {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.score-overlay.basketball .team {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.score-overlay.basketball .score {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+/* Football Score Overlay */
+.score-overlay.football {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.score-overlay.football img {
+    width: 200px; /* Adjust size */
+    display: block;
+}
