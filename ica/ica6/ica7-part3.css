@@ -1,0 +1,49 @@
+
+
+@media (max-width: 600px) {
+    #narrowScreen {
+        background-color: purple;
+    }
+}
+
+@media (min-width: 601px) {
+    #narrowScreen {
+        background-color: green;
+    }
+}
+
+@media (max-width: 800px) {
+    #wideScreen {
+        background-color: red;
+    }
+}
+
+@media (min-width: 801px) {
+    #wideScreen {
+        background-color: lightblue;
+    }
+}
+
+@media (max-height: 500px) {
+    #shortScreen {
+        background-color: yellow;
+    }
+}
+
+@media (min-height: 501px) {
+    #shortScreen {
+        background-color: turquoise;
+    }
+}
+
+@media (max-height: 800px) {
+    #tallScreen {
+        background-color: lavender;
+    }
+}
+
+@media (min-height: 801px) {
+    #tallScreen {
+        background-color: orange;
+    }
+}
