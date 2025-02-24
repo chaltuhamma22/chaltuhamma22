@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2em;
+    background: #f6f8fe;
+  }
+  
+  [type="range"].kawaii {
+    --base: #ff99cc; /* Light Pink */
+    --light: color-mix(in sRGB, var(--base) 60%, #fff);
+    --lighter: color-mix(in sRGB, var(--base) 30%, #fff);
+    --dark: color-mix(in sRGB, var(--base) 95%, #000);
+    --transparent: color-mix(in sRGB, var(--base) 0%, #0000);
+    appearance: none;
+    font-size: 1em;
+    width: 20em;
+    height: 2em;
+    border: 0.5em solid #fff;
+    border-radius: 2em;
+    box-shadow: 0 0 1em #0001, 0 0.25em 0.5em #0001;
+    overflow: hidden;
+  }
+  
+  [type="range"].kawaii::-webkit-slider-runnable-track {
+    background:
+      radial-gradient(circle at 0.75em 0.6em, var(--light) calc(0.2em - 1px), #0000 0.2em),
+      radial-gradient(circle at 1.25em 0.6em, var(--light) calc(0.2em - 1px), #0000 0.2em),
+      radial-gradient(circle at 5em 0.6em, var(--light) calc(0.2em - 1px), #0000 0.2em),
+      linear-gradient(var(--light) 0 0) 1.25em 0.4em / 3.75em calc(0.4em - 0.5px) no-repeat,
+      linear-gradient(90deg, var(--base), var(--transparent) 1em),
+      linear-gradient(#0000 70%, var(--dark) 80%),
+      var(--base);
+    border-radius: 2em;
+    height: 100%;
+    overflow: hidden;
+  }
+  
