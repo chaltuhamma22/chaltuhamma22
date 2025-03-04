@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+  }
+  
+  .mondrian {
+    --u: max(1px, 0.05em);
+    --pink: #ff69b4;
+    --purple: #800080;
+    --lightpink: #ffc0cb;
+    appearance: none;
+    font-size: 1em;
+    height: 1em;
+    width: 2.25em;
+    border: var(--u) solid;
+    position: relative;
+    box-sizing: content-box;
+    overflow: hidden;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4em;
+      height: 100%;
+      transition: left 0.25s;
+      background:
+        linear-gradient(var(--purple) 0 0) calc(var(--u) * 0) calc(var(--u) * -3) / calc(var(--u) * 14) calc(var(--u) * 5),
+        linear-gradient(var(--lightpink) 0 0) calc(var(--u) * 15) calc(var(--u) * -3) / calc(var(--u) * 14) calc(var(--u) * 5),
+        linear-gradient(var(--pink) 0 0) calc(var(--u) * 30) calc(var(--u) * -3) / calc(var(--u) * 10) calc(var(--u) * 13),
+        linear-gradient(var(--purple) 0 0) calc(var(--u) * 41) calc(var(--u) * -3) / calc(var(--u) * 10) calc(var(--u) * 5),
+        linear-gradient(var(--lightpink) 0 0) calc(var(--u) * 3) calc(var(--u) * 3) / calc(var(--u) * 14) calc(var(--u) * 14),
+        linear-gradient(var(--pink) 0 0) calc(var(--u) * 41) calc(var(--u) * 3) / calc(var(--u) * 14) calc(var(--u) * 20),
+        linear-gradient(var(--purple) 0 0) calc(var(--u) * 30) calc(var(--u) * 11) / calc(var(--u) * 10) calc(var(--u) * 13),
+        linear-gradient(var(--lightpink) 0 0) calc(var(--u) * 8) calc(var(--u) * 18) / calc(var(--u) * 16) calc(var(--u) * 5),
+        linear-gradient(var(--pink) 0 0) calc(var(--u) * 74) calc(var(--u) * 18) / calc(var(--u) * 10) calc(var(--u) * 14),
+      #000;
+      
+      background-repeat: no-repeat;
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0.5em;
+      width: 0.8em;
+      height: 0.8em;
+      border: max(1px, 0.05em) solid #0000;
+      transform: translate(-50%, -50%);
+    }
+    
+    &:checked {
+      &::after {
+        left: calc(100% - 0.5em);
+      }
+      &::before {
+        left: -1.75em;
+      }
+    }
+    
+    &[disabled] {
+      filter: grayscale(1);
+    }
+  }
+  
