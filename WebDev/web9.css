@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --text: 1rem;
+  --text-xs: 0.85rem;
+  --space: 1rem;
+  --black: #000;
+  --white: #fff;
+  --grey-light: #d7d7d7;
+  --pink: #ff66b2;
+  --purple: #a366ff;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: var(--black);
+  background-image: radial-gradient(ellipse at center, #1c2330 0%, var(--black) 100%);
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: var(--text);
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 1rem;
+  background: linear-gradient(90deg, #6a6a6a, var(--grey-light));
+  border-radius: 0 0 20px 20px;
+  z-index: 999;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 1rem;
+  background: var(--white);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--black);
+  border-top: 4px solid var(--black);
+}
+
+footer a {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.planet {
+  width: 14vw;
+  height: 14vw;
+  top: calc(50% - 7vw);
+  left: calc(50% - 7vw);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  position: absolute;
+  z-index: 2;
+}
+
+.atmosphere {
+  width: 14vw;
+  height: 14vw;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.6;
+  z-index: 2;
+  background: radial-gradient(transparent 0%, rgba(255, 255, 255, 0.5) 30%, transparent 100%);
+}
+
+.sun {
+  width: 16vw;
+  height: 16vw;
+  position: absolute;
+  top: calc(50% - 8vw);
+  left: calc(50% - 8vw);
+  border-radius: 50%;
+  background: yellow;
+  box-shadow: 0px 0px 100px yellow, 0px 0px 100px yellow;
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
+  position: relative;
+}
+
+.section {
+  padding: calc(var(--space) * 2);
+  height: 100vh;
+  width: 65vw;
+  scroll-snap-align: center;
+  position: relative;
+}
+
+.tag {
+  position: absolute;
+  top: calc(-1 * var(--space));
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 99;
+}
