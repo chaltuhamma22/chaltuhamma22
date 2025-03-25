@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harun's Silly Ethiopian Cat Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comfortaa', sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #008000;
+        }
+        .story-container {
+            background-color: #f8f1e4;
+            border: 2px solid #cc0000;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        button {
+            background-color: #008000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Harun's Silly Cat Capture in Ethiopia🐱🇪🇹</h1>
+    <div class="story-container">
+        <button id="generate">Click here to read the silly story!</button>
+        <p id="story"></p>
+    </div>
+
+    <script>
+        const generate = document.getElementById('generate');
+        const story = document.getElementById('story');
+
+        function randomValueFromArray(array){
+            return array[Math.floor(Math.random()*array.length)];
+        }
+
+        const storyText = `During a family trip back in sumer 2018, Harun found a stray cat wandering around Hasassa, Ethiopia. Without anyone noticing, he secretly tucked the tiny 5-pound cat into his jacket and jumped into the car to head towards another city in Ethiopia called Shashamane with his family. On the way, everyone heard strange meowing sounds. Harun confidently claimed he was the one meowing! No one suspected a thing.
+
+        Later, as the family gathered to pray in grandma’s house in Shashamane, Harun silently unleashed the cat into the living room. Suddenly, the little furry cat ran under Harun's older sister Helen's skirt while she was praying! Helen is known to be afraid of cats, so this was not going to end well. A loud scream erupted, interrupting the prayer. The entire family burst into laughter, watching as Helen ran for her life, terrified by the harmless cat.`;
+
+        generate.addEventListener('click', result);
+
+        function result() {
+            story.textContent = storyText;
+            story.style.visibility = 'visible';
+        }
+    </script>
+    <footer>
+        <p>Based on a true story in my life - CHALTU</p>
+      </footer>
+      
+</body>
+</html>
