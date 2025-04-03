@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        background: #eee;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+        margin: 0;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 1.1rem;
+        color: #aaa;
+        cursor: pointer;
+      }
+
+      button.showBox {
+        margin: 50px;
+        padding: 10px 15px;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="showBox">Display message box</button>
+
+    <script>
+      // This function creates a new message box and adds it to the page
+      function displayMessage(messageText) {
+        const panel = document.createElement('div');
+        panel.setAttribute('class', 'msgBox');
+
+        const msg = document.createElement('p');
+        msg.textContent = messageText;
+
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '×';
+
+        // When the close button is clicked, remove the message box
+        closeBtn.addEventListener('click', () => {
+          panel.remove();
+        });
+
+        panel.appendChild(msg);
+        panel.appendChild(closeBtn);
+
+        document.body.appendChild(panel);
+      }
+
+      // Grab the button and run the function when it's clicked
+      const displayButton = document.querySelector('.showBox');
+      displayButton.addEventListener('click', () => {
+        displayMessage("Hello! This is your custom function in action.");
+      });
+    </script>
+  </body>
+</html>
