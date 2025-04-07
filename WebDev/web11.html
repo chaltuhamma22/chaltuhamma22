@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holographic Masks</title>
+  <link rel="stylesheet" href="web11.css">
+</head>
+<body>
+
+<header class="content-grid">
+  <h1>Holographic Masks</h1>
+  <p><strong>Original design by <a href="https://codepen.io/HejChristian/pen/YPzLbYX" target="_blank" rel="noopener noreferrer">Christian Alder</a>.</strong></p>
+  <p>Experimenting with some CSS holographic effects, inspired by this guide from Robb Owen:
+    <a href="https://robbowen.digital/wrote-about/css-blend-mode-shaders/" target="_blank">CSS-only shaders</a>.</p>
+  <p>This effect relies on <code>background-attachment: fixed;</code>, which doesn't work on iOS Safari.</p>
+  <p>Scroll to see the effect.</p>
+</header>
+
+<main class="content-grid flow">
+  <section>
+    <div class="grid">
+      <div class="cell">
+        <p>Normal Sparrow</p>
+        <img src="https://assets.codepen.io/2153413/sparrow-base.png" alt="Sparrow base" width="512" class="framed">
+      </div>
+      <div class="cell">
+        <p>Fancy Sparrow ✨</p>
+        <div class="shader framed">
+          <img src="https://assets.codepen.io/2153413/sparrow-base.png" alt="Sparrow base" width="512">
+          <div class="shader-layer specular gradient-sparrow">
+            <img class="shader-layer mask" src="https://assets.codepen.io/2153413/sparrow-mask.png" alt="" width="300">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
