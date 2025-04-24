@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Results - Content Moderation & Safety</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .chart-container {
+      width: 90%;
+      max-width: 800px;
+      height: 400px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; margin-top: 40px;">Addictive News Survey Data Findings</h1>
+  <h2>How Often Users Fact-Check News on Social Media</h2>
+  <div id="chart1" class="chart-container"></div>
+
+  <h2>Factors That Make Users Trust Online News Stories</h2>
+  <div id="chart2" class="chart-container" style="height: 450px;"></div>
+
+  <h2>What Users Think is the Best Way to Stop Misinformation</h2>
+  <div id="chart3" class="chart-container"></div>
+
+  <h2>Likelihood to Change Opinion After False News</h2>
+  <div id="chart4" class="chart-container"></div>
+
+  <h2>Preferred Type of Content Moderation</h2>
+  <div id="chart5" class="chart-container"></div>
+
+  <h2>How Platforms Should Handle Misinformation</h2>
+  <div id="chart7" class="chart-container" style="height: 450px;"></div>
+
+  <h2>Desired Features for Content Moderation</h2>
+  <div id="chart8" class="chart-container" style="height: 500px;"></div>
+
+  <script>
+    var chart1 = echarts.init(document.getElementById('chart1'));
+    chart1.setOption({
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      xAxis: {
+        type: 'category',
+        data: ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'],
+        axisLabel: { rotate: 0, fontWeight: 'bold' },
+        nameTextStyle: { fontWeight: 'bold' }
+      },
+      yAxis: {
+        type: 'value', name: 'Respondents', axisLabel: { formatter: '{value}', fontWeight: 'bold' },
+        nameTextStyle: { fontWeight: 'bold' }
+      },
+      series: [{
+        data: [15, 42, 78, 63, 22],
+        type: 'bar',
+        itemStyle: { color: '#4285F4' },
+        label: { show: true, position: 'top' }
+      }]
+    });
+
+    var chart2 = echarts.init(document.getElementById('chart2'));
+    chart2.setOption({
+      title: {
+        left: 'center',
+        textStyle: { fontSize: 16 }
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        formatter: '{b}: {c} responses'
+      },
+      grid: { left: '25%', right: '10%' },
+      xAxis: {
+  type: 'value',
+  name: 'Number of Respondents',
+  nameTextStyle: { fontWeight: 'bold' },
+  axisLabel: { fontWeight: 'bold' },
+  nameLocation: 'middle',
+  nameGap: 30
+},
+yAxis: {
+  type: 'category',
+  data: [
+    'Other',
+    'It has a lot of likes/comments/shares',
+    'It aligns with my opinions or beliefs',
+    'It was shared by someone I trust',
+    'It has links to credible sources',
+    'The platform or news outlet is well-known'
+  ],
+  axisLabel: { fontWeight: 'bold' },
+  nameTextStyle: { fontWeight: 'bold' },
+  nameLocation: 'middle',
+  nameGap: 50
+},
+      series: [{
+        name: 'Trust Factors',
+        data: [3, 6, 7, 22, 32, 32],
+        type: 'bar',
+        itemStyle: { color: '#34A853' },
+        label: { show: true, position: 'right', fontWeight: 'bold' }
+      }]
+    });
+
+    var chart3 = echarts.init(document.getElementById('chart3'));
+    chart3.setOption({
+      title: {
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left'
+      },
+      series: [
+        {
+          name: 'Solutions',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: '16',
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 104, name: 'Adding warning labels' },
+            { value: 87, name: 'Promoting credible sources' },
+            { value: 65, name: 'Blocking repeat offenders' },
+            { value: 33, name: 'Removing misinformation' }
+          ]
+        }
+      ]
+    });
+
+    var chart4 = echarts.init(document.getElementById('chart4'));
+chart4.setOption({
+  title: {
+  
+    left: 'center',
+    textStyle: { fontSize: 16 }
+  },
+  tooltip: {
+    trigger: 'item',
+    formatter: '{b}: {c} responses ({d}%)'
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left'
+  },
+  series: [
+    {
+      name: 'Likelihood',
+      type: 'pie',
+      radius: ['50%', '70%'],
+      label: {
+        formatter: '{b}: {c} ({d}%)',
+        fontWeight: 'bold'
+      },
+      labelLine: {
+        show: true
+      },
+      data: [
+        { value: 17, name: 'Very likely' },
+        { value: 8, name: 'Somewhat likely' },
+        { value: 2, name: 'Neutral' },
+        { value: 0, name: 'Unlikely' },
+        { value: 0, name: 'Very unlikely' }
+      ],
+      color: ['#4285F4', '#34A853', '#FBBC05', '#EA4335', '#9E9E9E']
+    }
+  ]
+});
+var chart5 = echarts.init(document.getElementById('chart5'));
+chart5.setOption({
+  title: {
+    left: 'center',
+    textStyle: { fontSize: 16 }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: { type: 'shadow' },
+    formatter: '{b}: {c} respondents'
+  },
+  xAxis: {
+    type: 'category',
+    data: ['Strict', 'Moderate', 'Light', 'None'],
+    axisLabel: { fontWeight: 'bold' },
+    nameTextStyle: { fontWeight: 'bold' }
+  },
+  yAxis: {
+    type: 'value',
+    name: 'Number of Respondents',
+    axisLabel: { formatter: '{value}', fontWeight: 'bold' },
+    nameTextStyle: { fontWeight: 'bold' }
+  },
+  series: [{
+    data: [4, 17, 6, 1],
+    type: 'bar',
+    itemStyle: { color: '#FBBC05' },
+    label: { show: true, position: 'top', fontWeight: 'bold' }
+  }]
+});
+var chart7 = echarts.init(document.getElementById('chart7'));
+chart7.setOption({
+  title: {
+    left: 'center',
+    textStyle: { fontSize: 16 }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: { type: 'shadow' },
+    formatter: '{b}: {c} votes'
+  },
+  grid: { left: '30%', right: '10%' },
+  xAxis: {
+  type: 'value',
+  name: 'Number of Respondents',
+  axisLabel: { fontWeight: 'bold' },
+  nameTextStyle: { fontWeight: 'bold' },
+  nameLocation: 'middle',
+  nameGap: 30
+},
+
+yAxis: {
+  type: 'category',
+  data: [
+    'Add warning label',
+    'Remove content',
+    'Provide counterpoints',
+    'Combination',
+    'Other'
+  ],
+  axisLabel: { fontWeight: 'bold' },
+  nameTextStyle: { fontWeight: 'bold' },
+  nameLocation: 'middle',
+  nameGap: 50
+},
+
+  series: [{
+    data: [14, 7, 4, 2, 1],
+    type: 'bar',
+    itemStyle: { color: '#EA4335' },
+    label: { show: true, position: 'right', fontWeight: 'bold' }
+  }]
+});
+var chart8 = echarts.init(document.getElementById('chart8'));
+chart8.setOption({
+  title: {
+    left: 'center',
+    textStyle: { fontSize: 16 }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: { type: 'shadow' },
+    formatter: '{b}: {c} selections'
+  },
+  grid: { left: '30%', right: '10%' },
+  xAxis: {
+  type: 'value',
+  name: 'Number of Selections',
+  axisLabel: { fontWeight: 'bold' },
+  nameTextStyle: { fontWeight: 'bold' },
+  nameLocation: 'middle',
+  nameGap: 30
+},
+
+yAxis: {
+  type: 'category',
+  data: [
+    'User-controlled filters',
+    'Human moderators',
+    'Community-driven moderation',
+    'AI-based tools',
+    'Other'
+  ],
+  axisLabel: { fontWeight: 'bold' },
+  nameTextStyle: { fontWeight: 'bold' },
+  nameLocation: 'middle',
+  nameGap: 50
+},
+
+  series: [{
+    data: [20, 16, 14, 9, 3],
+    type: 'bar',
+    itemStyle: { color: '#9C27B0' },
+    label: { show: true, position: 'right', fontWeight: 'bold' }
+  }]
+});
+
+
+  </script>
+</body>
+</html>
+
