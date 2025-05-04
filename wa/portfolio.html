@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Legacy Clinic Progress Tracker</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 5px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #dcdcdc;
+            border-radius: 8px;
+            margin: 20px 0;
+            height: 25px;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border-radius: 8px;
+            transition: width 0.4s ease;
+        }
+
+        .checklist {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Onboarding Progress Tracker</h1>
+        <p>Digital Legacy Clinic | Chaltu Hamma</p>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="checklist">
+        <div class="task"><input type="checkbox" class="step">Attend Professor Jed’s Intro Lecture</div>
+        <div class="task"><input type="checkbox" class="step">Watch Returner Video Testimonials</div>
+        <div class="task"><input type="checkbox" class="step">Complete Ticket Scavenger Hunt</div>
+        <div class="task"><input type="checkbox" class="step">Practice AI Ticket Simulation</div>
+        <div class="task"><input type="checkbox" class="step">Meet with Assigned Returner</div>
+        <div class="task"><input type="checkbox" class="step">Submit First Draft Response</div>
+        <div class="task"><input type="checkbox" class="step">Assigned First Real Ticket</div>
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll('.step');
+        const progress = document.getElementById('progress');
+
+        steps.forEach(step => {
+            step.addEventListener('change', updateProgress);
+        });
+
+        function updateProgress() {
+            const completed = document.querySelectorAll('.step:checked').length;
+            const total = steps.length;
+            const percent = (completed / total) * 100;
+            progress.style.width = percent + '%';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaltu Hamma | Digital Legacy Clinic Case Study</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      padding: 50px;
+      background: #e7f5f9;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      color: #555;
+      font-size: 1.1em;
+    }
+    .accordion {
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .accordion-section {
+      border-bottom: 1px solid #ddd;
+    }
+    .accordion-header {
+      padding: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.2em;
+      background-color: #F0E5FF;
+    }
+    .accordion-content {
+      display: none;
+      padding: 20px;
+      background: #ffffff;
+    }
+    .tracker-section {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #progressBarContainer {
+      height: 25px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    #progressBar {
+      height: 100%;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      width: 0%;
+    }
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .status {
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: #fff;
+    }
+    .red { background: #e74c3c; }
+    .yellow { background: #f1c40f; color: #222; }
+    .green { background: #2ecc71; }
+    input, select, button {
+      margin: 5px 5px 5px 0;
+      padding: 8px;
+      font-size: 1em;
+    }
+    select option[value="red"] { background: #e74c3c; color: #fff; }
+    select option[value="yellow"] { background: #f1c40f; color: #222; }
+    select option[value="green"] { background: #2ecc71; color: #fff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Chaltu Hamma</h1>
+  <p>Information Scientist | Digital Legacy Clinic Case Study</p>
+</header>
+
+<div class="accordion">
+
+  <div class="accordion-section">
+    <div class="accordion-header">Introduction</div>
+    <div class="accordion-content">
+      <p>When I first joined the Digital Legacy Clinic, I noticed that onboarding felt overwhelming. There were a lot of different parts, and it was hard to tell what needed to get done first. As part of my project this semester, I helped create a clearer structure for new members by working on the onboarding flowchart timeline, building an itinerary for returning students, and creating a checklist document. While doing this work, I realized that even with better organization, students could still feel lost. That’s what inspired me to design a progress tracker that would make the onboarding experience feel easier to manage and less stressful.</p>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">Project Overview</div>
+    <div class="accordion-content">
+      <p>My project focused on two things: helping organize and structure onboarding for future new members, and creating a tool that supports them in staying on track. First, I collaborated with my team to create a onboarding timeline diagram and checklist documents. Then, after reflecting on my own experience, I designed a Progress Tracker  to give students a clear, visual way to track their onboarding progress step-by-step.</p>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">Process</div>
+    <div class="accordion-content">
+      <p>For the first part of the project, I worked with the onboarding team to draft the timeline diagram, outline important milestones, and create a checklist for returners to help guide the new members. For the second part, I sketched out what kind of tool would have helped me when I was new. I decided to build a user friendly Progress Tracker using HTML. I made it editable so that students could add their own tasks and update their status easily, with a visual progress bar that shows their completion status.</p>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">Challenges and Solutions</div>
+    <div class="accordion-content">
+      <p>One challenge was making the onboarding process feel less overwhelming without overloading new students with even more materials. I kept the Progress Tracker flexible so it wouldn't add extra pressure. Another challenge was that I couldn't fully test the Tracker on students yet. To solve this, I made sure everything could be updated easily by future clinic members.</p>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">Outcomes</div>
+    <div class="accordion-content">
+      <ul>
+        <li>Created a flowchart timeline that maps out new members onboarding</li>
+        <li> Created a returner itinerary and checklist documents for clearer leadership support</li>
+        <li>Designed and built a Progress Tracker to help new members stay organized during onboarding</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">Reflection</div>
+    <div class="accordion-content">
+      <p>This project helped me realize how important it is to organize complex processes into small, manageable steps. It also pushed me to think from the user's perspective, remembering how it felt to be brand new and overwhelmed. Building the Progress Tracker taught me more about planning for real users' needs and designing tools that make tasks easier to manage. Moving forward, I want to keep building tools that help people feel more confident and less stressed when learning something new.</p>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">Progress Tracker</div>
+    <div class="accordion-content">
+      <div class="tracker-section">
+        <div id="progressBarContainer">
+          <div id="progressBar"></div>
+        </div>
+
+        <div id="taskList"></div>
+
+        <input type="text" id="newTask" placeholder="New task">
+        <select id="newStatus">
+          <option value="green">Completed</option>
+          <option value="yellow">In Progress</option>
+          <option value="red">Not Started</option>
+        </select>
+        <button onclick="addTask()">Add Task</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const headers = document.querySelectorAll('.accordion-header');
+headers.forEach(header => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+  });
+});
+
+const taskList = document.getElementById('taskList');
+const progressBar = document.getElementById('progressBar');
+let tasks = [
+  { name: "Attend Professor Jed's Intro Lecture", status: 'green' },
+  { name: "Read Previous Students Testimonials", status: 'yellow' },
+  { name: "Complete Ticket Scavenger Hunt", status: 'red' }
+];
+
+function updateUI() {
+  taskList.innerHTML = '';
+  let doneCount = 0;
+  tasks.forEach((task, index) => {
+    const div = document.createElement('div');
+    div.className = 'task';
+    let displayText = task.status === 'green' ? 'Completed' : task.status === 'yellow' ? 'In Progress' : 'Not Started';
+    div.innerHTML = `
+      <span>${task.name}</span>
+      <span class="status ${task.status}">${displayText}</span>
+    `;
+    taskList.appendChild(div);
+    if (task.status === 'green') doneCount++;
+  });
+  const percent = Math.round((doneCount / tasks.length) * 100);
+  progressBar.style.width = percent + '%';
+}
+
+function addTask() {
+  const name = document.getElementById('newTask').value;
+  const status = document.getElementById('newStatus').value;
+  if (name.trim() !== '') {
+    tasks.push({ name, status });
+    updateUI();
+    document.getElementById('newTask').value = '';
+  }
+}
+
+updateUI();
+</script>
+
+</body>
+</html>
